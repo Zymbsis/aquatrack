@@ -1,8 +1,8 @@
-import { AdvantagesSection, WelcomeSection } from 'components';
 import { useEffect } from 'react';
-import { useDispatch } from 'react-redux';
-import { Container, Section } from 'shared';
 import { useSearchParams } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { AdvantagesSection, WelcomeSection } from 'components';
+import { Container, Section } from 'shared';
 import { AXIOS_INSTANCE } from '../redux/constants';
 import { setTokenRegister } from '../redux/auth/slice.js';
 

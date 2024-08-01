@@ -1,5 +1,5 @@
-import css from './CustomToast.module.css';
 import { Button } from 'shared';
+import css from './CustomToast.module.css';
 
 const customId = 'custom-id-yes';
 

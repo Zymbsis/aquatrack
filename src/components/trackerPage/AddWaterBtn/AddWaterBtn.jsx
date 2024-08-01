@@ -1,8 +1,7 @@
-import { useSelector } from 'react-redux';
 import { useModal } from 'context';
-import { selectSelectedDate } from '../../../redux/water/selectors.js';
 import { Icon } from 'shared';
 import WaterModal from '../../modal/WaterModal/WaterModal';
+
 import clsx from 'clsx';
 import css from './AddWaterBtn.module.css';
 
