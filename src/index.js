@@ -14,7 +14,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <Provider store={store}>
       <PersistGate persistor={persistor}>
-        <BrowserRouter basename="/project-digitall3.0-r">
+        <BrowserRouter basename="/aquatrack">
           <ModalProvider>
             <TourProvider steps={tourSteps} styles={tourStyles}>
               <App />
