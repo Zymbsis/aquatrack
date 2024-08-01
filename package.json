@@ -1,8 +1,8 @@
 {
-  "name": "project-digitall3.0-r",
+  "name": "aquatrack",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://zymbsis.github.io/project-digitall3.0-r",
+  "homepage": "https://zymbsis.github.io/aquatrack",
   "dependencies": {
     "@emotion/react": "^11.11.4",
     "@emotion/styled": "^11.11.5",
