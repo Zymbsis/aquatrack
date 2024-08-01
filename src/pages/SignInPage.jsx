@@ -1,6 +1,5 @@
 import { Container, Section, Logo } from 'shared';
-import { AdvantagesSection } from 'components';
-import SignInForm from 'components/sigInPage/SignInForm/SignInForm';
+import { SignInForm, AdvantagesSection } from 'components';
 
 const SignInPage = () => {
   return (

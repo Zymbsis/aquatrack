@@ -1,10 +1,7 @@
 import { Container, Logo, Section } from 'shared';
-import { AdvantagesSection } from 'components';
-import SignUpForm from 'components/signUpPage/SignUpForm/SignUpForm';
-
+import { SignUpForm, AdvantagesSection } from 'components';
 
 const SignUpPage = () => {
-
   return (
     <Section>
       <Container>
