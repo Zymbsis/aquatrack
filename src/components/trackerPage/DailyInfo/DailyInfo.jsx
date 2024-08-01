@@ -16,7 +16,7 @@ const DailyInfo = () => {
       <div className={css.wrapperTop}>
         <ChooseDate />
         {(selectedDate < currentDate || selectedDate === null) && (
-          <AddWaterBtn className="dailyInfoStyles" />
+          <AddWaterBtn className="dailyInfoStyles" date={selectedDate} />
         )}
       </div>
       <WaterList />

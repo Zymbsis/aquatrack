@@ -6,12 +6,11 @@ import WaterModal from '../../modal/WaterModal/WaterModal';
 import clsx from 'clsx';
 import css from './AddWaterBtn.module.css';
 
-const AddWaterBtn = ({ className }) => {
+const AddWaterBtn = ({ className, date }) => {
   const { openModal } = useModal();
-  const selectedDate = useSelector(selectSelectedDate);
 
   const handleClick = () => {
-    openModal(<WaterModal date={selectedDate} />);
+    openModal(<WaterModal date={date} />);
   };
 
   return (

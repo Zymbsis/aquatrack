@@ -10,7 +10,7 @@ const WaterMainInfo = () => {
     <div className={clsx(css.container, 'tour-water-main-info')}>
       <WaterDailyNorma />
       <WaterProgressBar />
-      <AddWaterBtn className="waterMainInfoStyles" />
+      <AddWaterBtn className="waterMainInfoStyles" date={null} />
     </div>
   );
 };
