@@ -55,6 +55,7 @@ export const ModalProvider = ({ children }) => {
     document.body.style.overflow = 'hidden';
     setModalContent(content);
     setTimeout(() => {
+      if (backdropRef.current === null) return;
       backdropRef.current.style.opacity = 1;
     }, 0);
   };
