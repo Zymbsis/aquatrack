@@ -1,14 +1,11 @@
 {
   "files": {
-    "main.css": "/aquatrack/static/css/main.483331c7.css",
-    "main.js": "/aquatrack/static/js/main.085cf7f5.js",
-    "static/js/983.ba3254ed.chunk.js": "/aquatrack/static/js/983.ba3254ed.chunk.js",
-    "static/css/877.391f64b0.chunk.css": "/aquatrack/static/css/877.391f64b0.chunk.css",
-    "static/js/877.fb0dc06c.chunk.js": "/aquatrack/static/js/877.fb0dc06c.chunk.js",
-    "static/css/968.3c94801f.chunk.css": "/aquatrack/static/css/968.3c94801f.chunk.css",
-    "static/js/968.a6151e08.chunk.js": "/aquatrack/static/js/968.a6151e08.chunk.js",
-    "static/js/378.3bb05fbc.chunk.js": "/aquatrack/static/js/378.3bb05fbc.chunk.js",
-    "static/js/617.6c614aa9.chunk.js": "/aquatrack/static/js/617.6c614aa9.chunk.js",
+    "main.css": "/aquatrack/static/css/main.247057ad.css",
+    "main.js": "/aquatrack/static/js/main.075bd2ea.js",
+    "static/js/983.6fbc2b5a.chunk.js": "/aquatrack/static/js/983.6fbc2b5a.chunk.js",
+    "static/js/235.7f777d8c.chunk.js": "/aquatrack/static/js/235.7f777d8c.chunk.js",
+    "static/js/182.3075f40d.chunk.js": "/aquatrack/static/js/182.3075f40d.chunk.js",
+    "static/js/378.ff41b262.chunk.js": "/aquatrack/static/js/378.ff41b262.chunk.js",
     "static/media/background-desktop-@2x.png": "/aquatrack/static/media/background-desktop-@2x.8badba3b5d467d199527.png",
     "static/media/background-tablet-@2x.png": "/aquatrack/static/media/background-tablet-@2x.d70d1a74ccae01d7a563.png",
     "static/media/background-desktop-@1x.png": "/aquatrack/static/media/background-desktop-@1x.bf428a8997a3c10cfc9f.png",
@@ -36,18 +33,15 @@
     "static/media/customers@1x-1.webp": "/aquatrack/static/media/customers@1x-1.2c78b04f41461e916d05.webp",
     "index.html": "/aquatrack/index.html",
     "static/media/customers@1x-2.webp": "/aquatrack/static/media/customers@1x-2.2f191ce0c5922b3b76d1.webp",
-    "main.483331c7.css.map": "/aquatrack/static/css/main.483331c7.css.map",
-    "main.085cf7f5.js.map": "/aquatrack/static/js/main.085cf7f5.js.map",
-    "983.ba3254ed.chunk.js.map": "/aquatrack/static/js/983.ba3254ed.chunk.js.map",
-    "877.391f64b0.chunk.css.map": "/aquatrack/static/css/877.391f64b0.chunk.css.map",
-    "877.fb0dc06c.chunk.js.map": "/aquatrack/static/js/877.fb0dc06c.chunk.js.map",
-    "968.3c94801f.chunk.css.map": "/aquatrack/static/css/968.3c94801f.chunk.css.map",
-    "968.a6151e08.chunk.js.map": "/aquatrack/static/js/968.a6151e08.chunk.js.map",
-    "378.3bb05fbc.chunk.js.map": "/aquatrack/static/js/378.3bb05fbc.chunk.js.map",
-    "617.6c614aa9.chunk.js.map": "/aquatrack/static/js/617.6c614aa9.chunk.js.map"
+    "main.247057ad.css.map": "/aquatrack/static/css/main.247057ad.css.map",
+    "main.075bd2ea.js.map": "/aquatrack/static/js/main.075bd2ea.js.map",
+    "983.6fbc2b5a.chunk.js.map": "/aquatrack/static/js/983.6fbc2b5a.chunk.js.map",
+    "235.7f777d8c.chunk.js.map": "/aquatrack/static/js/235.7f777d8c.chunk.js.map",
+    "182.3075f40d.chunk.js.map": "/aquatrack/static/js/182.3075f40d.chunk.js.map",
+    "378.ff41b262.chunk.js.map": "/aquatrack/static/js/378.ff41b262.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.483331c7.css",
-    "static/js/main.085cf7f5.js"
+    "static/css/main.247057ad.css",
+    "static/js/main.075bd2ea.js"
   ]
 }
