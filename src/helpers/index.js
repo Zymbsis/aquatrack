@@ -5,3 +5,5 @@ export { parseDayForFetch } from './parseDateForFetch.js';
 export { parsedTime } from './parseTime.js';
 export { getCurrentTime } from './parseTime.js';
 export { getDaysArray } from './createDaysArray.js';
+export { getGooglOAuthUrl } from './getGooglOAuthUrl.js';
+export { useWindowSize } from './useWindowSize.js';

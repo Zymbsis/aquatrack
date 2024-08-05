@@ -6,6 +6,7 @@ import {
   refreshUser,
   activateUser,
   requestActivationEmail,
+  handleGoogleSignUp,
 } from './operations';
 import { INITIAL_STATE } from '../constants';
 import storage from 'redux-persist/lib/storage';
@@ -24,6 +25,9 @@ const authSlice = createSlice({
   },
   extraReducers: builder =>
     builder
+      .addCase(handleGoogleSignUp.fulfilled, (state, action) => {
+        state.token = action.payload;
+      })
       .addCase(register.rejected, (state, action) => {
         state.isLoading = false;
         state.isError = true;

@@ -1,35 +1,24 @@
 import { useEffect } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
+import { activateUser, handleGoogleSignUp } from '../redux/auth/operations';
 import { AdvantagesSection, WelcomeSection } from 'components';
 import { Container, Section } from 'shared';
-import { AXIOS_INSTANCE } from '../redux/constants';
-import { setTokenRegister } from '../redux/auth/slice.js';
 
 const HomePage = () => {
   const dispatch = useDispatch();
-
   const [searchParams] = useSearchParams();
+  const code = searchParams.get('code');
+  const token = searchParams.get('token');
 
   useEffect(() => {
-    const handleOAuthCallback = async () => {
-      const code = searchParams.get('code');
-      if (code) {
-        try {
-          const response = await AXIOS_INSTANCE.post('users/confirm-oauth', {
-            code,
-          });
-          const { accessToken } = response.data.data;
-
-          dispatch(setTokenRegister(accessToken));
-        } catch (err) {
-          console.log(err);
-        }
-      }
-    };
-
-    handleOAuthCallback();
-  }, [searchParams, dispatch]);
+    if (code) {
+      dispatch(handleGoogleSignUp(code));
+    }
+    if (token) {
+      dispatch(activateUser(token));
+    }
+  }, [dispatch, code, token]);
 
   return (
     <Section>

@@ -51,10 +51,3 @@
     }
   }
 }
-
-.wrapper.signInPage,
-.wrapper.signUpPage {
-  @media (max-width: 1439.98px) {
-    display: none;
-  }
-}

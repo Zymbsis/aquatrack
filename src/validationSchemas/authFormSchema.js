@@ -6,7 +6,10 @@ export const signUpFormSchema = Yup.object({
     .min(8, 'must contain at least 8 characters')
     .max(64)
     .required(),
-  confirmPassword: Yup.string().oneOf([Yup.ref('password'), null]),
+  confirmPassword: Yup.string().oneOf(
+    [Yup.ref('password'), null],
+    'password does not match'
+  ),
 });
 
 export const signInFormSchema = Yup.object({

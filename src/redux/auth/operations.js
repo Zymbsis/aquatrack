@@ -89,19 +89,35 @@ export const refreshUser = createAsyncThunk(
   }
 );
 
-export const googleSignIn = createAsyncThunk(
+// export const googleSignIn = createAsyncThunk(
+//   'auth/googleSignIn',
+//   async (_, thunkAPI) => {
+//     try {
+//       const response = await AXIOS_INSTANCE.get('/auth/google', {
+//         withCredentials: true,
+//       });
+//       const { data } = response;
+//       if (data.success) {
+//         return data.email;
+//       } else {
+//         return thunkAPI.rejectWithValue(data.message);
+//       }
+//     } catch (error) {
+//       return thunkAPI.rejectWithValue(error.message);
+//     }
+//   }
+// );
+
+export const handleGoogleSignUp = createAsyncThunk(
   'auth/googleSignIn',
-  async (_, thunkAPI) => {
+  async (code, thunkAPI) => {
     try {
-      const response = await AXIOS_INSTANCE.get('/auth/google', {
-        withCredentials: true,
+      const response = await AXIOS_INSTANCE.post('users/confirm-oauth', {
+        code,
       });
-      const { data } = response;
-      if (data.success) {
-        return data.email;
-      } else {
-        return thunkAPI.rejectWithValue(data.message);
-      }
+      const { accessToken } = response.data.data;
+
+      return accessToken;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);
     }

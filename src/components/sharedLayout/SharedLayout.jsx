@@ -36,7 +36,7 @@ const SharedLayout = ({ children }) => {
   return (
     <>
       <Toaster
-        position="bottom-left"
+        position="top-left"
         reverseOrder={false}
         toastOptions={{ duration: 6000 }}
       />

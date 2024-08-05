@@ -1,13 +1,16 @@
 import { Container, Logo, Section } from 'shared';
-import { SignUpForm, AdvantagesSection } from 'components';
+import { AdvantagesSection, SignUpSection } from 'components';
+import { useWindowSize } from 'helpers';
 
 const SignUpPage = () => {
+  const windowSize = useWindowSize();
+
   return (
     <Section>
       <Container>
         <Logo />
-        <SignUpForm />
-        <AdvantagesSection className="signUpPage" />
+        <SignUpSection />
+        {windowSize >= 1440 && <AdvantagesSection />}
       </Container>
     </Section>
   );

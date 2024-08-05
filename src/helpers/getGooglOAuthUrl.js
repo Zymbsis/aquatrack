@@ -1,10 +1,13 @@
 import toast from 'react-hot-toast';
 import { AXIOS_INSTANCE } from '../redux/constants';
 
-export const handleGoogleSignUp = async () => {
+export const getGooglOAuthUrl = async () => {
   try {
-    const response = await AXIOS_INSTANCE.get('users/get-oauth-url');
-    const { url } = response.data.data;
+    const {
+      data: {
+        data: { url },
+      },
+    } = await AXIOS_INSTANCE.get('users/get-oauth-url');
     window.location.href = url;
   } catch (error) {
     toast.error('Error getting Google OAuth URL');

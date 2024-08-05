@@ -1,13 +1,9 @@
+import { useModal } from 'context';
 import { Button, Title } from 'shared';
 import css from './SuccessfullySendEmail.module.css';
-import { useModal } from 'context';
 
 const SuccessfullySendEmail = ({ email }) => {
   const { closeModal } = useModal();
-
-  const handleClick = e => {
-    closeModal(e);
-  };
 
   return (
     <div className={css.wrapper}>
@@ -16,7 +12,7 @@ const SuccessfullySendEmail = ({ email }) => {
         Please verify your email address by clicking the link sent to:{' '}
         <span>{email}</span>
       </p>
-      <Button className={css.closeBtn} onClick={handleClick}>
+      <Button className={css.closeBtn} onClick={closeModal}>
         Close window
       </Button>
     </div>

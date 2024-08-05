@@ -40,7 +40,6 @@ const WaterForm = ({ type, id, date, time, volume }) => {
     },
   });
 
-  console.log(date);
   const onSubmit = (data, e) => {
     if (type === 'add') {
       const payload = {
