@@ -4,9 +4,7 @@ import css from './UserSettingsFormColumns.module.css';
 
 const countNorma = userData => {
   const { gender, weight, activeHours } = userData;
-
   if (weight > 150 || activeHours > 12) return '-';
-
   if (gender === 'male') {
     return Math.round((weight * 0.04 + activeHours * 0.6) * 10) / 10;
   }

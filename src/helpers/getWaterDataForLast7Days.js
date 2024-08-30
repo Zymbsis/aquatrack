@@ -51,7 +51,6 @@ const getWaterDataForLast7Days = (waterData, month) => {
   if (monthAsNumber !== currentMonth) {
     for (let i = 1; i <= 25; i += 4) {
       const day = i.toString().padStart(2, '0');
-      console.log(day);
       const dayData = waterData.find(water => water.day === day) || {
         portions: [],
       };

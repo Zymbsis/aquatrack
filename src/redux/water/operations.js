@@ -30,6 +30,61 @@ export const getInfoByMonth = createAsyncThunk(
   }
   // Example: getInfoByMonth('2024-07')
 );
+
+export const addWater = createAsyncThunk(
+  'water/addWater',
+  async (waterData, thunkAPI) => {
+    try {
+      const {
+        data: { data },
+      } = await AXIOS_INSTANCE.post('/water', waterData);
+
+      return data;
+    } catch (error) {
+      return thunkAPI.rejectWithValue(error);
+    }
+  }
+  // Example: addWaterIntake({
+  //   time: "09:00:05",
+  //   date: "2024-07-01",
+  //   volume: 150
+  // })
+);
+
+export const updateWater = createAsyncThunk(
+  'water/updateWater',
+  async ({ _id, ...waterData }, thunkAPI) => {
+    try {
+      const {
+        data: { data },
+      } = await AXIOS_INSTANCE.patch(`/water/${_id}`, {
+        ...waterData,
+      });
+      return data;
+    } catch (error) {
+      return thunkAPI.rejectWithValue(error);
+    }
+  }
+  //Example: updateWaterIntake({
+  //  _id: '669657233a9e3788a6f219b0',
+  //  time: '10:30:00',
+  //  volume: 50,
+  // })
+);
+
+export const deleteWater = createAsyncThunk(
+  'water/deleteWater',
+  async (_id, thunkAPI) => {
+    try {
+      await AXIOS_INSTANCE.delete(`/water/${_id}`);
+      return _id;
+    } catch (error) {
+      return thunkAPI.rejectWithValue(error);
+    }
+  }
+  // Example: deleteWaterIntake('669659783a9e3788a6f21a13')
+);
+
 export const addWaterIntake = createAsyncThunk(
   'water/addWaterIntake',
   async (waterData, { rejectWithValue, getState, dispatch }) => {

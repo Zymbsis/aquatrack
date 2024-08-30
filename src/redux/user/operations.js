@@ -5,30 +5,10 @@ import toast from 'react-hot-toast';
 export const getUser = createAsyncThunk('user/getUser', async (_, thunkAPI) => {
   try {
     const {
-      data: {
-        data: {
-          email,
-          name,
-          gender,
-          dailyNorma,
-          activeHours,
-          weight,
-          avatar,
-          createdAt,
-        },
-      },
+      data: { data },
     } = await AXIOS_INSTANCE.get('/users/current');
 
-    return {
-      email,
-      name,
-      gender,
-      dailyNorma,
-      activeHours,
-      weight,
-      avatar,
-      createdAt,
-    };
+    return data;
   } catch (error) {
     return thunkAPI.rejectWithValue(error);
   }
@@ -39,30 +19,9 @@ export const updateUser = createAsyncThunk(
   async (payload, thunkAPI) => {
     try {
       const {
-        data: {
-          data: {
-            email,
-            name,
-            gender,
-            dailyNorma,
-            activeHours,
-            weight,
-            avatar,
-            createdAt,
-          },
-        },
+        data: { data },
       } = await AXIOS_INSTANCE.patch('/users/update', payload);
-
-      return {
-        email,
-        name,
-        gender,
-        dailyNorma,
-        activeHours,
-        weight,
-        avatar,
-        createdAt,
-      };
+      return data;
     } catch (error) {
       toast.error(<b>{error.data.message}</b>);
       return thunkAPI.rejectWithValue(error);

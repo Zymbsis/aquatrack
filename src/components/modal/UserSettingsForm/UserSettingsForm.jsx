@@ -18,10 +18,24 @@ import css from './UserSettingsForm.module.css';
 const UserSettingsForm = () => {
   const { closeModal } = useModal();
   const dispatch = useDispatch();
-  const user = useSelector(selectCurrentUser);
+  const {
+    name,
+    email,
+    gender,
+    weight,
+    dailyNorma: userDailyNorma,
+    activeHours,
+  } = useSelector(selectCurrentUser);
   const isError = useSelector(selectIsError);
-  const usersDailyNorma = user.dailyNorma / 1000;
-  const defaultValues = { ...user, dailyNorma: usersDailyNorma };
+  const dailyNorma = userDailyNorma / 1000;
+  const defaultValues = {
+    name,
+    email,
+    gender,
+    weight,
+    dailyNorma,
+    activeHours,
+  };
   delete defaultValues.createdAt;
 
   const {
@@ -59,8 +73,7 @@ const UserSettingsForm = () => {
   const onSubmit = (originalFormData, evt) => {
     const data = { ...originalFormData };
     delete data.avatar;
-    data.dailyNorma = data.dailyNorma * 1000;
-    dispatch(updateUser(data));
+    dispatch(updateUser({ ...data, dailyNorma: data.dailyNorma * 1000 }));
 
     if (!isError) {
       closeModal(evt);

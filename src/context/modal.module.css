@@ -8,7 +8,7 @@
   background-color: var(--backdrop-color);
   overflow-y: auto;
   opacity: 0;
-  transition: opacity var(--transition-timing-function) var(--transition-duration);
+  transition: opacity var(--transition-timing-function) 300ms;
 }
 
 .modalBackdrop::-webkit-scrollbar {

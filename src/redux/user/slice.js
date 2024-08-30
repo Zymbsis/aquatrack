@@ -22,9 +22,6 @@ const userSlice = createSlice({
   initialState: INITIAL_STATE.user,
   extraReducers: builder => {
     builder
-      // .addCase(register.fulfilled, (state, action) => {
-      //   state.user = action.payload;
-      // })
       .addCase(getUser.fulfilled, handleFulfilled)
       .addCase(updateUser.fulfilled, handleFulfilled)
       .addCase(countUsers.fulfilled, (state, action) => {

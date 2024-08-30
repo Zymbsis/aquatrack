@@ -20,6 +20,7 @@ const WaterList = () => {
     if (!selectedDate) return;
     dispatch(getInfoByDay(selectedDate));
   }, [dispatch, selectedDate]);
+
   const currentWaterList = selectedDate ? selectedDayWaterList : todayWaterList;
 
   return (
