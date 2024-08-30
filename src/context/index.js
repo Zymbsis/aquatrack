@@ -1,1 +1,1 @@
-export { ModalProvider, useModal } from './modalContext';
+export { modalContext, useModal } from './modalContext';

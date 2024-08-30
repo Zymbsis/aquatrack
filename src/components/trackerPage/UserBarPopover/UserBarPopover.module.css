@@ -14,7 +14,7 @@
   box-shadow: 0px 4px 50px 0px rgba(0, 0, 0, 0.10);
   opacity: 0;
   pointer-events: none;
-  transition: all var(--transition-timing-function) var(--transition-duration);
+  transition: all var(--transition-timing-function) 300ms;
 
   @media (min-width:768px) {
     height: 82px;

@@ -26,14 +26,14 @@ const UserBar = () => {
       setIsVisible(false);
       setTimeout(() => {
         setIsOpen(false);
-      }, 500);
+      }, 300);
     }
   };
   const handleClosePopover = () => {
     setIsVisible(false);
     setTimeout(() => {
       setIsOpen(false);
-    }, 500);
+    }, 300);
   };
   const restrictionClick = e => {
     return buttonRef.current && buttonRef.current.contains(e.target);

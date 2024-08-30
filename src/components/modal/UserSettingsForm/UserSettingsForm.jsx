@@ -21,6 +21,7 @@ const UserSettingsForm = () => {
   const {
     name,
     email,
+    avatar,
     gender,
     weight,
     dailyNorma: userDailyNorma,
@@ -31,6 +32,7 @@ const UserSettingsForm = () => {
   const defaultValues = {
     name,
     email,
+    avatar,
     gender,
     weight,
     dailyNorma,
