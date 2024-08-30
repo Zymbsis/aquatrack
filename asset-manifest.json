@@ -1,11 +1,11 @@
 {
   "files": {
-    "main.css": "/aquatrack/static/css/main.9ca0cfe3.css",
-    "main.js": "/aquatrack/static/js/main.ce5291dc.js",
-    "static/js/983.6fbc2b5a.chunk.js": "/aquatrack/static/js/983.6fbc2b5a.chunk.js",
-    "static/js/235.7f777d8c.chunk.js": "/aquatrack/static/js/235.7f777d8c.chunk.js",
-    "static/js/182.3075f40d.chunk.js": "/aquatrack/static/js/182.3075f40d.chunk.js",
-    "static/js/378.ff41b262.chunk.js": "/aquatrack/static/js/378.ff41b262.chunk.js",
+    "main.css": "/aquatrack/static/css/main.adf62299.css",
+    "main.js": "/aquatrack/static/js/main.0d6adf96.js",
+    "static/js/983.7e9db2c5.chunk.js": "/aquatrack/static/js/983.7e9db2c5.chunk.js",
+    "static/js/235.e1c5fc43.chunk.js": "/aquatrack/static/js/235.e1c5fc43.chunk.js",
+    "static/js/182.ef59e043.chunk.js": "/aquatrack/static/js/182.ef59e043.chunk.js",
+    "static/js/378.b9ccc120.chunk.js": "/aquatrack/static/js/378.b9ccc120.chunk.js",
     "static/media/background-desktop-@2x.png": "/aquatrack/static/media/background-desktop-@2x.8badba3b5d467d199527.png",
     "static/media/background-tablet-@2x.png": "/aquatrack/static/media/background-tablet-@2x.d70d1a74ccae01d7a563.png",
     "static/media/background-desktop-@1x.png": "/aquatrack/static/media/background-desktop-@1x.bf428a8997a3c10cfc9f.png",
@@ -33,15 +33,15 @@
     "static/media/customers@1x-1.webp": "/aquatrack/static/media/customers@1x-1.2c78b04f41461e916d05.webp",
     "index.html": "/aquatrack/index.html",
     "static/media/customers@1x-2.webp": "/aquatrack/static/media/customers@1x-2.2f191ce0c5922b3b76d1.webp",
-    "main.9ca0cfe3.css.map": "/aquatrack/static/css/main.9ca0cfe3.css.map",
-    "main.ce5291dc.js.map": "/aquatrack/static/js/main.ce5291dc.js.map",
-    "983.6fbc2b5a.chunk.js.map": "/aquatrack/static/js/983.6fbc2b5a.chunk.js.map",
-    "235.7f777d8c.chunk.js.map": "/aquatrack/static/js/235.7f777d8c.chunk.js.map",
-    "182.3075f40d.chunk.js.map": "/aquatrack/static/js/182.3075f40d.chunk.js.map",
-    "378.ff41b262.chunk.js.map": "/aquatrack/static/js/378.ff41b262.chunk.js.map"
+    "main.adf62299.css.map": "/aquatrack/static/css/main.adf62299.css.map",
+    "main.0d6adf96.js.map": "/aquatrack/static/js/main.0d6adf96.js.map",
+    "983.7e9db2c5.chunk.js.map": "/aquatrack/static/js/983.7e9db2c5.chunk.js.map",
+    "235.e1c5fc43.chunk.js.map": "/aquatrack/static/js/235.e1c5fc43.chunk.js.map",
+    "182.ef59e043.chunk.js.map": "/aquatrack/static/js/182.ef59e043.chunk.js.map",
+    "378.b9ccc120.chunk.js.map": "/aquatrack/static/js/378.b9ccc120.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.9ca0cfe3.css",
-    "static/js/main.ce5291dc.js"
+    "static/css/main.adf62299.css",
+    "static/js/main.0d6adf96.js"
   ]
 }
