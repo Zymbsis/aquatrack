@@ -40,6 +40,7 @@ const CalendarPagination = ({
       selectedDate.getMonth() >= limitDate.getMonth());
 
   useEffect(() => {
+    if (!dailyNorma) return;
     const dateForFetch = parseMonthForFetch(selectedDate, currentDay);
     dispatch(getInfoByMonth(dateForFetch));
   }, [selectedDate, currentDay, dispatch, dailyNorma]);

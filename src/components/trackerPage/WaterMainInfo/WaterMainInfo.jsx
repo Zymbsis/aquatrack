@@ -16,6 +16,7 @@ const WaterMainInfo = () => {
   const dailyNorma = useSelector(selectDailyNorma);
 
   useEffect(() => {
+    if (!dailyNorma) return;
     dispatch(getInfoByDay(currentDay));
   }, [dispatch, currentDay, dailyNorma]);
 

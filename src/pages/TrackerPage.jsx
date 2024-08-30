@@ -9,6 +9,7 @@ const TrackerPage = () => {
   useEffect(() => {
     dispatch(getUser());
   }, [dispatch]);
+
   return (
     <Section>
       <Container>
