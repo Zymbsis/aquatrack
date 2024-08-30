@@ -1,7 +1,6 @@
 import { useModal } from 'context';
 import { Icon } from 'shared';
 import WaterModal from '../../modal/WaterModal/WaterModal';
-
 import clsx from 'clsx';
 import css from './AddWaterBtn.module.css';
 
@@ -19,9 +18,9 @@ const AddWaterBtn = ({ className, date }) => {
         className={clsx(css.addWaterBtn, 'tour-add-water')}
         onClick={handleClick}
       >
-        <div className={css.iconPlusWrap}>
+        <span className={css.iconPlusWrap}>
           <Icon iconId="icon-plus" className={css.iconPlus} />
-        </div>
+        </span>
         Add water
       </button>
     </div>

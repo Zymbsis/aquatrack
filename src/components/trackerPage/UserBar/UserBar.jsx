@@ -3,11 +3,15 @@ import { useState, useRef } from 'react';
 import UserBarPopover from '../UserBarPopover/UserBarPopover';
 import { Icon } from 'shared';
 import { useSelector } from 'react-redux';
-import { selectCurrentUser } from '../../../redux/user/selectors';
+import {
+  selectUserAvatar,
+  selectUserName,
+} from '../../../redux/user/selectors';
 import clsx from 'clsx';
 
 const UserBar = () => {
-  const { name, avatar } = useSelector(selectCurrentUser);
+  const avatar = useSelector(selectUserAvatar);
+  const userName = useSelector(selectUserName);
   const [isOpen, setIsOpen] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
   const buttonRef = useRef(null);
@@ -38,7 +42,7 @@ const UserBar = () => {
   return (
     <div className={clsx(css.userBarContainer, 'tour-user-info')}>
       <div className={css.userBarWrapper}>
-        <span className={css.userName}>{name}</span>
+        <span className={css.userName}>{userName}</span>
         <div className={css.avatarWrapper}>
           {avatar && (
             <img src={avatar} alt="User Avatar" className={css.avatar} />

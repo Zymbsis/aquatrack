@@ -23,7 +23,6 @@ export const INITIAL_STATE = {
 
 export const AXIOS_INSTANCE = axios.create({
   baseURL: 'https://aquatrackbackend-production.up.railway.app',
-  // baseURL: 'https://project-digitall3-0-n.onrender.com',
   withCredentials: true,
 });
 
@@ -41,7 +40,6 @@ AXIOS_INSTANCE.interceptors.request.use(
         auth: { token },
       } = store.getState();
       request.headers.Authorization = `Bearer ${token}`;
-
       const controller = new AbortController();
       request.signal = controller.signal;
       abortControllers.push(controller);
@@ -62,7 +60,6 @@ AXIOS_INSTANCE.interceptors.response.use(
   async error => {
     try {
       const originalRequest = error.config;
-      // console.log('error :>> ', error);
       if (
         error.response &&
         error.response.status === 401 &&
@@ -72,10 +69,6 @@ AXIOS_INSTANCE.interceptors.response.use(
         originalRequest._retry = true;
         if (!store.getState().auth.isRefreshing) {
           try {
-            // abortControllers.forEach(controller => {
-            //   controller.abort();
-            // });
-            // abortControllers = [];
             await store.dispatch(refreshUser());
             return await AXIOS_INSTANCE(originalRequest);
           } catch (refreshError) {
