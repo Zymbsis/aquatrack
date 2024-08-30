@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/aquatrack/static/css/main.adf62299.css",
-    "main.js": "/aquatrack/static/js/main.0d6adf96.js",
+    "main.js": "/aquatrack/static/js/main.3e7ad35e.js",
     "static/js/983.7e9db2c5.chunk.js": "/aquatrack/static/js/983.7e9db2c5.chunk.js",
     "static/js/235.e1c5fc43.chunk.js": "/aquatrack/static/js/235.e1c5fc43.chunk.js",
     "static/js/182.ef59e043.chunk.js": "/aquatrack/static/js/182.ef59e043.chunk.js",
@@ -34,7 +34,7 @@
     "index.html": "/aquatrack/index.html",
     "static/media/customers@1x-2.webp": "/aquatrack/static/media/customers@1x-2.2f191ce0c5922b3b76d1.webp",
     "main.adf62299.css.map": "/aquatrack/static/css/main.adf62299.css.map",
-    "main.0d6adf96.js.map": "/aquatrack/static/js/main.0d6adf96.js.map",
+    "main.3e7ad35e.js.map": "/aquatrack/static/js/main.3e7ad35e.js.map",
     "983.7e9db2c5.chunk.js.map": "/aquatrack/static/js/983.7e9db2c5.chunk.js.map",
     "235.e1c5fc43.chunk.js.map": "/aquatrack/static/js/235.e1c5fc43.chunk.js.map",
     "182.ef59e043.chunk.js.map": "/aquatrack/static/js/182.ef59e043.chunk.js.map",
@@ -42,6 +42,6 @@
   },
   "entrypoints": [
     "static/css/main.adf62299.css",
-    "static/js/main.0d6adf96.js"
+    "static/js/main.3e7ad35e.js"
   ]
 }
