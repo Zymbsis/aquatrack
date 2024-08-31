@@ -1,12 +1,11 @@
 import { useState } from 'react';
 import { useForm } from 'react-hook-form';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { register as registerUser } from '../../../redux/auth/operations';
 import { signUpFormSchema } from 'validationSchemas';
 import { Button, InputField } from 'shared';
 import ShowPasswordBtn from '../ShowPasswordBtn/ShowPasswordBtn';
-import { selectIsSendMail } from '../../../redux/auth/selectors';
 import { useModal } from '../../../context';
 import { SuccessfullySendEmail } from '../..';
 import toast from 'react-hot-toast';
@@ -14,7 +13,6 @@ import toast from 'react-hot-toast';
 const SignUpForm = () => {
   const dispatch = useDispatch();
   const { openModal } = useModal();
-  const isSendMail = useSelector(selectIsSendMail);
 
   const [showPassword, setShowPassword] = useState(false);
   const handleClickShowPassword = () => {
