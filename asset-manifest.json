@@ -1,11 +1,11 @@
 {
   "files": {
-    "main.css": "/aquatrack/static/css/main.4220345e.css",
-    "main.js": "/aquatrack/static/js/main.0a60fd33.js",
-    "static/js/983.7e9db2c5.chunk.js": "/aquatrack/static/js/983.7e9db2c5.chunk.js",
-    "static/js/235.e1c5fc43.chunk.js": "/aquatrack/static/js/235.e1c5fc43.chunk.js",
-    "static/js/182.ef59e043.chunk.js": "/aquatrack/static/js/182.ef59e043.chunk.js",
-    "static/js/378.b9ccc120.chunk.js": "/aquatrack/static/js/378.b9ccc120.chunk.js",
+    "main.css": "/aquatrack/static/css/main.ad5eb0c8.css",
+    "main.js": "/aquatrack/static/js/main.66891880.js",
+    "static/js/983.2d894d78.chunk.js": "/aquatrack/static/js/983.2d894d78.chunk.js",
+    "static/js/235.4bde3e2d.chunk.js": "/aquatrack/static/js/235.4bde3e2d.chunk.js",
+    "static/js/182.0d266f64.chunk.js": "/aquatrack/static/js/182.0d266f64.chunk.js",
+    "static/js/66.e04593a0.chunk.js": "/aquatrack/static/js/66.e04593a0.chunk.js",
     "static/media/background-desktop-@2x.png": "/aquatrack/static/media/background-desktop-@2x.8badba3b5d467d199527.png",
     "static/media/background-tablet-@2x.png": "/aquatrack/static/media/background-tablet-@2x.d70d1a74ccae01d7a563.png",
     "static/media/background-desktop-@1x.png": "/aquatrack/static/media/background-desktop-@1x.bf428a8997a3c10cfc9f.png",
@@ -33,15 +33,15 @@
     "static/media/customers@1x-1.webp": "/aquatrack/static/media/customers@1x-1.2c78b04f41461e916d05.webp",
     "index.html": "/aquatrack/index.html",
     "static/media/customers@1x-2.webp": "/aquatrack/static/media/customers@1x-2.2f191ce0c5922b3b76d1.webp",
-    "main.4220345e.css.map": "/aquatrack/static/css/main.4220345e.css.map",
-    "main.0a60fd33.js.map": "/aquatrack/static/js/main.0a60fd33.js.map",
-    "983.7e9db2c5.chunk.js.map": "/aquatrack/static/js/983.7e9db2c5.chunk.js.map",
-    "235.e1c5fc43.chunk.js.map": "/aquatrack/static/js/235.e1c5fc43.chunk.js.map",
-    "182.ef59e043.chunk.js.map": "/aquatrack/static/js/182.ef59e043.chunk.js.map",
-    "378.b9ccc120.chunk.js.map": "/aquatrack/static/js/378.b9ccc120.chunk.js.map"
+    "main.ad5eb0c8.css.map": "/aquatrack/static/css/main.ad5eb0c8.css.map",
+    "main.66891880.js.map": "/aquatrack/static/js/main.66891880.js.map",
+    "983.2d894d78.chunk.js.map": "/aquatrack/static/js/983.2d894d78.chunk.js.map",
+    "235.4bde3e2d.chunk.js.map": "/aquatrack/static/js/235.4bde3e2d.chunk.js.map",
+    "182.0d266f64.chunk.js.map": "/aquatrack/static/js/182.0d266f64.chunk.js.map",
+    "66.e04593a0.chunk.js.map": "/aquatrack/static/js/66.e04593a0.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.4220345e.css",
-    "static/js/main.0a60fd33.js"
+    "static/css/main.ad5eb0c8.css",
+    "static/js/main.66891880.js"
   ]
 }
