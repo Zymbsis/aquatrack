@@ -35,25 +35,25 @@ const SharedLayout = ({ children }) => {
 
   return (
     <>
-      <Toaster
-        position="top-left"
-        reverseOrder={false}
-        toastOptions={{ duration: 6000 }}
-      />
       <main className={css.mainContainer}>
+        <Toaster
+          position="top-left"
+          reverseOrder={false}
+          toastOptions={{ duration: 6000 }}
+        />
         <Suspense fallback={<Loader />}>{children}</Suspense>
+        <ToastContainer
+          position="top-right"
+          autoClose={10000}
+          hideProgressBar={false}
+          closeOnClick
+          rtl={false}
+          pauseOnFocusLoss
+          draggable
+          pauseOnHover
+          theme="light"
+        />
       </main>
-      <ToastContainer
-        position="top-right"
-        autoClose={10000}
-        hideProgressBar={false}
-        closeOnClick
-        rtl={false}
-        pauseOnFocusLoss
-        draggable
-        pauseOnHover
-        theme="light"
-      />
     </>
   );
 };

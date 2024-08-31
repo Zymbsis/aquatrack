@@ -1,8 +1,12 @@
 import { useEffect } from 'react';
 import { useSearchParams } from 'react-router-dom';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { activateUser, handleGoogleSignUp } from '../redux/auth/operations';
-import { AdvantagesSection, WelcomeSection } from 'components';
+import {
+  AdvantagesSection,
+  SuccessfullySendEmail,
+  WelcomeSection,
+} from 'components';
 import { Container, Section } from 'shared';
 
 const HomePage = () => {

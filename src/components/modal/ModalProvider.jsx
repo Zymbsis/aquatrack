@@ -5,7 +5,6 @@ import ModalBackdrop from './ModalBackdrop/ModalBackdrop';
 
 const ModalProvider = ({ children }) => {
   const [modalContent, setModalContent] = useState(null);
-
   const openModal = content => {
     document.body.style.overflow = 'hidden';
     setModalContent(content);

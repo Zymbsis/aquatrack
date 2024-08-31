@@ -12,7 +12,6 @@ export const register = createAsyncThunk(
       );
       return data.data;
     } catch (error) {
-      toast.error(<b>{error.data.message}</b>);
       return thunkAPI.rejectWithValue(error);
     }
   }
@@ -89,25 +88,6 @@ export const refreshUser = createAsyncThunk(
   }
 );
 
-// export const googleSignIn = createAsyncThunk(
-//   'auth/googleSignIn',
-//   async (_, thunkAPI) => {
-//     try {
-//       const response = await AXIOS_INSTANCE.get('/auth/google', {
-//         withCredentials: true,
-//       });
-//       const { data } = response;
-//       if (data.success) {
-//         return data.email;
-//       } else {
-//         return thunkAPI.rejectWithValue(data.message);
-//       }
-//     } catch (error) {
-//       return thunkAPI.rejectWithValue(error.message);
-//     }
-//   }
-// );
-
 export const handleGoogleSignUp = createAsyncThunk(
   'auth/googleSignIn',
   async (code, thunkAPI) => {
@@ -116,7 +96,6 @@ export const handleGoogleSignUp = createAsyncThunk(
         code,
       });
       const { accessToken } = response.data.data;
-
       return accessToken;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);
