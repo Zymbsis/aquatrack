@@ -23,7 +23,7 @@ const waterSlice = createSlice({
         if (state.selectedDate === action.payload.date) {
           state.infoBySelectedDay = action.payload.portions;
         } else {
-          state.infoByToday = action.payload;
+          state.infoByToday = action.payload.portions;
         }
       })
       .addCase(getInfoByMonth.fulfilled, (state, action) => {
@@ -32,32 +32,35 @@ const waterSlice = createSlice({
       })
       .addCase(addWaterIntake.fulfilled, (state, action) => {
         state.isLoading = false;
-        if (state.selectedDate === action.payload.data.date) {
-          state.infoBySelectedDay.push(action.payload.data);
+        if (state.selectedDate === action.payload.date) {
+          state.infoBySelectedDay.push(action.payload);
         } else {
-          state.infoByToday = action.payload.infoByToday;
+          state.infoByToday.push(action.payload);
         }
-        state.infoByMonth = action.payload.infoByMonth;
       })
       .addCase(updateWaterIntake.fulfilled, (state, action) => {
         state.isLoading = false;
         if (state.selectedDate) {
           state.infoBySelectedDay = state.infoBySelectedDay.map(item =>
-            item._id === action.payload.data._id ? action.payload.data : item
+            item._id === action.payload._id ? action.payload : item
           );
         } else {
-          state.infoByToday = action.payload.infoByToday;
+          state.infoByToday = state.infoByToday.map(item =>
+            item._id === action.payload._id ? action.payload : item
+          );
         }
-        state.infoByMonth = action.payload.infoByMonth;
       })
       .addCase(deleteWaterIntake.fulfilled, (state, action) => {
         state.isLoading = false;
         if (state.selectedDate) {
-          state.infoBySelectedDay = action.payload.infoByDay.portions;
+          state.infoBySelectedDay = state.infoBySelectedDay.filter(
+            item => item._id !== action.payload
+          );
         } else {
-          state.infoByToday = action.payload.infoByDay;
+          state.infoByToday = state.infoByToday.filter(
+            item => item._id !== action.payload
+          );
         }
-        state.infoByMonth = action.payload.infoByMonth;
       })
       .addMatcher(
         isAnyOf(

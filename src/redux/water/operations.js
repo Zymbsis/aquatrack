@@ -20,10 +20,20 @@ export const getInfoByDay = createAsyncThunk(
 
 export const getInfoByMonth = createAsyncThunk(
   'water/getInfoByMonth',
-  async (month, { rejectWithValue }) => {
+  async (_, { rejectWithValue, getState }) => {
+    const selectedDate = getState().water.selectedDate;
+    const currentDay = parseDayForFetch(new Date());
     try {
-      const { data } = await AXIOS_INSTANCE.get(`/water/month/${month}`);
-      return data.data;
+      const {
+        data: { data },
+      } = await AXIOS_INSTANCE.get(
+        `/water/month/${
+          selectedDate
+            ? selectedDate.substring(0, 7)
+            : currentDay.substring(0, 7)
+        }`
+      );
+      return data;
     } catch (error) {
       return rejectWithValue(error);
     }
@@ -31,82 +41,15 @@ export const getInfoByMonth = createAsyncThunk(
   // Example: getInfoByMonth('2024-07')
 );
 
-export const addWater = createAsyncThunk(
-  'water/addWater',
-  async (waterData, thunkAPI) => {
-    try {
-      const {
-        data: { data },
-      } = await AXIOS_INSTANCE.post('/water', waterData);
-
-      return data;
-    } catch (error) {
-      return thunkAPI.rejectWithValue(error);
-    }
-  }
-  // Example: addWaterIntake({
-  //   time: "09:00:05",
-  //   date: "2024-07-01",
-  //   volume: 150
-  // })
-);
-
-export const updateWater = createAsyncThunk(
-  'water/updateWater',
-  async ({ _id, ...waterData }, thunkAPI) => {
-    try {
-      const {
-        data: { data },
-      } = await AXIOS_INSTANCE.patch(`/water/${_id}`, {
-        ...waterData,
-      });
-      return data;
-    } catch (error) {
-      return thunkAPI.rejectWithValue(error);
-    }
-  }
-  //Example: updateWaterIntake({
-  //  _id: '669657233a9e3788a6f219b0',
-  //  time: '10:30:00',
-  //  volume: 50,
-  // })
-);
-
-export const deleteWater = createAsyncThunk(
-  'water/deleteWater',
-  async (_id, thunkAPI) => {
-    try {
-      await AXIOS_INSTANCE.delete(`/water/${_id}`);
-      return _id;
-    } catch (error) {
-      return thunkAPI.rejectWithValue(error);
-    }
-  }
-  // Example: deleteWaterIntake('669659783a9e3788a6f21a13')
-);
-
 export const addWaterIntake = createAsyncThunk(
   'water/addWaterIntake',
-  async (waterData, { rejectWithValue, getState, dispatch }) => {
-    const selectedDate = getState().water.selectedDate;
-    const currentDay = parseDayForFetch(new Date());
+  async (waterData, { rejectWithValue, dispatch }) => {
     try {
       const {
         data: { data },
       } = await AXIOS_INSTANCE.post('/water', waterData);
-      const { payload: infoByMonth } = await dispatch(
-        getInfoByMonth(
-          selectedDate
-            ? selectedDate.substring(0, 7)
-            : currentDay.substring(0, 7)
-        )
-      );
-      let infoByToday;
-      if (waterData.date === currentDay) {
-        const { payload } = await dispatch(getInfoByDay(currentDay));
-        infoByToday = payload;
-      }
-      return { data, infoByMonth, infoByToday };
+      dispatch(getInfoByMonth());
+      return data;
     } catch (error) {
       error.data.message === 'Bad Request'
         ? toast.error(<b>{'Something went wrong. Please, try again'}</b>)
@@ -123,28 +66,15 @@ export const addWaterIntake = createAsyncThunk(
 
 export const updateWaterIntake = createAsyncThunk(
   'water/updateWaterIntake',
-  async ({ _id, ...waterData }, { rejectWithValue, getState, dispatch }) => {
-    const selectedDate = getState().water.selectedDate;
-    const currentDay = parseDayForFetch(new Date());
+  async ({ _id, ...waterData }, { rejectWithValue, dispatch }) => {
     try {
       const {
         data: { data },
       } = await AXIOS_INSTANCE.patch(`/water/${_id}`, {
         ...waterData,
       });
-      const { payload: infoByMonth } = await dispatch(
-        getInfoByMonth(
-          selectedDate
-            ? selectedDate.substring(0, 7)
-            : currentDay.substring(0, 7)
-        )
-      );
-      let infoByToday;
-      if (selectedDate === null) {
-        const { payload } = await dispatch(getInfoByDay(currentDay));
-        infoByToday = payload;
-      }
-      return { data, infoByMonth, infoByToday };
+      dispatch(getInfoByMonth());
+      return data;
     } catch (error) {
       error.data.message === 'Bad Request'
         ? toast.error(<b>{'Something went wrong. Please, try again'}</b>)
@@ -161,24 +91,11 @@ export const updateWaterIntake = createAsyncThunk(
 
 export const deleteWaterIntake = createAsyncThunk(
   'water/deleteWaterIntake',
-  async (_id, { rejectWithValue, getState, dispatch }) => {
-    const selectedDate = getState().water.selectedDate;
-    const currentDay = parseDayForFetch(new Date());
+  async (_id, { rejectWithValue, dispatch }) => {
     try {
       await AXIOS_INSTANCE.delete(`/water/${_id}`);
-      const {
-        data: { data: infoByDay },
-      } = await AXIOS_INSTANCE.get(
-        `/water/day/${selectedDate ? selectedDate : currentDay}`
-      );
-      const { payload: infoByMonth } = await dispatch(
-        getInfoByMonth(
-          selectedDate
-            ? selectedDate.substring(0, 7)
-            : currentDay.substring(0, 7)
-        )
-      );
-      return { infoByDay, infoByMonth };
+      dispatch(getInfoByMonth());
+      return _id;
     } catch (error) {
       error.data.message === 'Bad Request'
         ? toast.error(<b>{'Something went wrong. Please, try again'}</b>)

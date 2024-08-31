@@ -13,15 +13,14 @@ import css from './WaterList.module.css';
 const WaterList = () => {
   const dispatch = useDispatch();
   const selectedDate = useSelector(selectSelectedDate);
-  const { portions: todayWaterList } = useSelector(selectInfoByToday);
+  const portions = useSelector(selectInfoByToday);
   const selectedDayWaterList = useSelector(selectInfoBySelectedDay);
 
   useEffect(() => {
     if (!selectedDate) return;
     dispatch(getInfoByDay(selectedDate));
   }, [dispatch, selectedDate]);
-
-  const currentWaterList = selectedDate ? selectedDayWaterList : todayWaterList;
+  const currentWaterList = selectedDate ? selectedDayWaterList : portions;
 
   return (
     <div className={css.waterListWrap}>

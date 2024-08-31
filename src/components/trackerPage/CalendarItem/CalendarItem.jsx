@@ -21,6 +21,7 @@ const CalendarItem = ({ day, selectedDate, waterData }) => {
       .toString()
       .padStart(2, '0')}-${String(day).padStart(2, '0')}`;
     const currentDay = parseDayForFetch(new Date());
+
     dispatch(setSelectedDay(date === currentDay ? null : date));
   };
   return (

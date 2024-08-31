@@ -1,9 +1,6 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import {
-  selectDailyNorma,
-  selectUserCreatedAt,
-} from '../../../redux/user/selectors';
+import { selectUserCreatedAt } from '../../../redux/user/selectors';
 import { getInfoByMonth } from '../../../redux/water/operations';
 import {
   parseDayForFetch,
@@ -23,7 +20,6 @@ const CalendarPagination = ({
   const dispatch = useDispatch();
 
   const userCreatedAt = useSelector(selectUserCreatedAt);
-  const dailyNorma = useSelector(selectDailyNorma);
   const userCreatedDate = userCreatedAt ? new Date(userCreatedAt) : new Date();
   const limitDate = new Date();
   const currentDay = parseDayForFetch(new Date());
@@ -40,10 +36,9 @@ const CalendarPagination = ({
       selectedDate.getMonth() >= limitDate.getMonth());
 
   useEffect(() => {
-    if (!dailyNorma) return;
     const dateForFetch = parseMonthForFetch(selectedDate, currentDay);
     dispatch(getInfoByMonth(dateForFetch));
-  }, [selectedDate, currentDay, dispatch, dailyNorma]);
+  }, [selectedDate, currentDay, dispatch]);
 
   const handlePrevMonth = () => {
     setSelectedDate(prevDate => {

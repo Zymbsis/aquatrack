@@ -1,17 +1,16 @@
-import { useSelector } from 'react-redux';
-import css from './WaterProgressBar.module.css';
 import Slider from '@mui/material/Slider';
+import { useSelector } from 'react-redux';
 import { selectCompletionRate } from '../../../redux/water/selectors.js';
+import css from './WaterProgressBar.module.css';
 
 const WaterProgressBar = () => {
   const completionRate = useSelector(selectCompletionRate);
-  const percentOfWater = completionRate ? Math.round(completionRate * 100) : 0;
 
   const invisibleMarkWater = [0, 50, 100];
   const marks = [
     {
-      value: percentOfWater,
-      label: `${percentOfWater}%`,
+      value: completionRate,
+      label: `${completionRate}%`,
     },
   ];
 
@@ -20,11 +19,11 @@ const WaterProgressBar = () => {
       <p className={css.boldText}>Today</p>
       <Slider
         className={css.slider}
-        value={percentOfWater}
+        value={completionRate}
         marks={marks}
         sx={{
           '& .MuiSlider-markLabel': {
-            visibility: invisibleMarkWater.includes(percentOfWater)
+            visibility: invisibleMarkWater.includes(completionRate)
               ? 'hidden'
               : 'visible',
           },

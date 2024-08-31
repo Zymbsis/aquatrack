@@ -5,21 +5,9 @@ import { selectInfoByMonth } from '../../../redux/water/selectors.js';
 import getWaterDataForLast7Days from 'helpers/getWaterDataForLast7Days';
 import CustomTooltip from 'components/trackerPage/CustomTooltip/CustomTooltip';
 
-
-// const transformedData = [
-//   { name: '12', uv: 1200 },
-//   { name: '13', uv: 1500 },
-//   { name: '14', uv: 700 },
-//   { name: '15', uv: 2000 },
-//   { name: '16', uv: 1200 },
-// ];
-
 const WeekDiagram = () => {
   const { days: waterData, date: month } = useSelector(selectInfoByMonth);
-
   const transformedData = getWaterDataForLast7Days(waterData, month);
-  // console.log(transformedData);
-
   const [chartSize, setChartSize] = useState({
     width: 303,
     height: 256,
