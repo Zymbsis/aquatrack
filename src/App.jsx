@@ -1,6 +1,6 @@
 import { lazy } from 'react';
 import { useSelector } from 'react-redux';
-import { Route, Routes } from 'react-router-dom';
+import { Navigate, Route, Routes } from 'react-router-dom';
 import {
   PrivateRoutes,
   RestrictedRoutes,
@@ -68,6 +68,7 @@ const App = () => {
                 <PrivateRoutes redirectTo="/" component={<TrackerPage />} />
               }
             />
+            <Route path="*" element={<Navigate to="/" />} />
           </Routes>
         </SharedLayout>
       )}
