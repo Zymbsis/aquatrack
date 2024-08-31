@@ -20,7 +20,7 @@ export const getInfoByDay = createAsyncThunk(
 
 export const getInfoByMonth = createAsyncThunk(
   'water/getInfoByMonth',
-  async (_, { rejectWithValue, getState }) => {
+  async (month, { rejectWithValue, getState }) => {
     const selectedDate = getState().water.selectedDate;
     const currentDay = parseDayForFetch(new Date());
     try {
@@ -28,7 +28,9 @@ export const getInfoByMonth = createAsyncThunk(
         data: { data },
       } = await AXIOS_INSTANCE.get(
         `/water/month/${
-          selectedDate
+          month
+            ? month
+            : selectedDate
             ? selectedDate.substring(0, 7)
             : currentDay.substring(0, 7)
         }`
