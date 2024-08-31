@@ -6,8 +6,7 @@ import { selectShowOnboardingTour } from '../redux/auth/selectors';
 import { showOnboarding } from '../redux/auth/slice';
 import { OnboardingToast } from 'components';
 
-export const useOnboardingToast = () => {
-  const dispatch = useDispatch();
+export const useOnboardingToast = dispatch => {
   const { setIsOpen } = useTour();
   const showTour = useSelector(selectShowOnboardingTour);
 
@@ -22,7 +21,7 @@ export const useOnboardingToast = () => {
           },
         });
         dispatch(showOnboarding(false));
-      }, 700);
+      }, 1000);
       return () => clearTimeout(timer);
     }
   }, [dispatch, showTour, setIsOpen]);

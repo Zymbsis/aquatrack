@@ -3,11 +3,12 @@ import { WaterDetailedInfo, WaterMainInfo } from 'components';
 import { useDispatch } from 'react-redux';
 import { useEffect } from 'react';
 import { getUser } from '../redux/user/operations';
-import { useOnboardingToast } from '../helpers/useOnboardingToast';
+import { useOnboardingToast } from 'helpers';
 
 const TrackerPage = () => {
-  useOnboardingToast();
   const dispatch = useDispatch();
+  useOnboardingToast(dispatch);
+
   useEffect(() => {
     dispatch(getUser());
   }, [dispatch]);

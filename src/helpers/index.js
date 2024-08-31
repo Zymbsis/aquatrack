@@ -7,3 +7,4 @@ export { getCurrentTime } from './parseTime.js';
 export { getDaysArray } from './createDaysArray.js';
 export { getGooglOAuthUrl } from './getGooglOAuthUrl.js';
 export { useWindowSize } from './useWindowSize.js';
+export { useOnboardingToast } from './useOnboardingToast.js';
