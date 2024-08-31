@@ -16,5 +16,8 @@ export const userSettingsFormSchema = yup.object().shape({
     .required('Email is required'),
   weight: yup.number().max(150, 'Must not be more then 150 kg'),
   activeHours: yup.number().max(12, 'Must not be more then 12 hours'),
-  dailyNorma: yup.number().max(10, 'Must not be more then 10 liters'),
+  dailyNorma: yup
+    .number()
+    .min(1.5, 'Must be at least 1.5 liters')
+    .max(10, 'Must not be more then 10 liters'),
 });
