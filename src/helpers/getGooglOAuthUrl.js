@@ -1,4 +1,4 @@
-import toast from 'react-hot-toast';
+import { toast } from 'react-toastify';
 import { AXIOS_INSTANCE } from '../redux/constants';
 
 export const getGooglOAuthUrl = async () => {

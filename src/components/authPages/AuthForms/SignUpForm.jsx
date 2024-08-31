@@ -8,7 +8,7 @@ import { Button, InputField } from 'shared';
 import ShowPasswordBtn from '../ShowPasswordBtn/ShowPasswordBtn';
 import { useModal } from '../../../context';
 import { SuccessfullySendEmail } from '../..';
-import toast from 'react-hot-toast';
+import { toast } from 'react-toastify';
 
 const SignUpForm = () => {
   const dispatch = useDispatch();
@@ -39,7 +39,7 @@ const SignUpForm = () => {
       await dispatch(registerUser({ email: newEmail, password })).unwrap();
       openModal(<SuccessfullySendEmail email={email} />);
     } catch (error) {
-      toast.error(<b>{error.data.message}</b>);
+      toast.error(error.data.message, { toastId: error.data.message });
     }
   };
 

@@ -1,7 +1,6 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import { AXIOS_INSTANCE } from '../constants';
 import { parseDayForFetch } from 'helpers';
-import toast from 'react-hot-toast';
 
 export const getInfoByDay = createAsyncThunk(
   'water/getInfoByDay',
@@ -53,9 +52,6 @@ export const addWaterIntake = createAsyncThunk(
       dispatch(getInfoByMonth());
       return data;
     } catch (error) {
-      error.data.message === 'Bad Request'
-        ? toast.error(<b>{'Something went wrong. Please, try again'}</b>)
-        : toast.error(<b>{error.data.message}</b>);
       return rejectWithValue(error);
     }
   }
@@ -78,9 +74,6 @@ export const updateWaterIntake = createAsyncThunk(
       dispatch(getInfoByMonth());
       return data;
     } catch (error) {
-      error.data.message === 'Bad Request'
-        ? toast.error(<b>{'Something went wrong. Please, try again'}</b>)
-        : toast.error(<b>{error.data.message}</b>);
       return rejectWithValue(error);
     }
   }
@@ -99,9 +92,6 @@ export const deleteWaterIntake = createAsyncThunk(
       dispatch(getInfoByMonth());
       return _id;
     } catch (error) {
-      error.data.message === 'Bad Request'
-        ? toast.error(<b>{'Something went wrong. Please, try again'}</b>)
-        : toast.error(<b>{error.data.message}</b>);
       return rejectWithValue(error);
     }
   }

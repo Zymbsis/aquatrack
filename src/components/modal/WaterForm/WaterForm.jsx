@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useForm } from 'react-hook-form';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { getCurrentTime, parseDayForFetch } from 'helpers';
 import { waterFormSchema } from 'validationSchemas';
@@ -8,19 +8,17 @@ import {
   addWaterIntake,
   updateWaterIntake,
 } from '../../../redux/water/operations';
-import { selectIsError } from '../../../redux/water/selectors';
 import { useModal } from 'context';
 import { Button } from 'shared';
 import WaterAmount from './WaterAmount';
 
 import clsx from 'clsx';
 import css from './WaterForm.module.css';
+import { toast } from 'react-toastify';
 
 const WaterForm = ({ type, id, date, time, volume }) => {
   const dispatch = useDispatch();
   const { closeModal } = useModal();
-  const isError = useSelector(selectIsError);
-
   const currentTime = getCurrentTime(new Date());
   const defaultTime = type === 'add' ? currentTime : time;
   const defaultVolume = type === 'add' ? 50 : volume;
@@ -47,7 +45,15 @@ const WaterForm = ({ type, id, date, time, volume }) => {
         time: data.timeInput,
         volume: data.waterInput,
       };
-      dispatch(addWaterIntake(payload));
+      toast.promise(
+        dispatch(addWaterIntake(payload)).unwrap(),
+        {
+          pending: 'Update',
+          success: 'Successfully added',
+          error: 'Something went wrong',
+        },
+        { autoClose: 3000 }
+      );
     }
     if (type === 'edit') {
       const payload = {
@@ -55,11 +61,17 @@ const WaterForm = ({ type, id, date, time, volume }) => {
         time: data.timeInput,
         volume: data.waterInput,
       };
-      dispatch(updateWaterIntake(payload));
+      toast.promise(
+        dispatch(updateWaterIntake(payload)).unwrap(),
+        {
+          pending: 'Update',
+          success: 'Successfully edited',
+          error: 'Something went wrong',
+        },
+        { autoClose: 3000 }
+      );
     }
-    if (!isError) {
-      closeModal(e);
-    }
+    closeModal(e);
   };
 
   const handleIncrease = () => {

@@ -11,3 +11,4 @@ export { default as SignUpSection } from './authPages/SignUpSection.jsx';
 export { default as WaterMainInfo } from './trackerPage/WaterMainInfo/WaterMainInfo.jsx';
 export { default as WaterDetailedInfo } from './trackerPage/WaterDetailedInfo/WaterDetailedInfo.jsx';
 export { default as SuccessfullySendEmail } from './modal/SuccessfullySendEmail/SuccessfullySendEmail.jsx';
+export { default as OnboardingToast } from './trackerPage/OnboardingToast/OnboardingToast.jsx';

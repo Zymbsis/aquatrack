@@ -18,3 +18,7 @@
 :root::-webkit-scrollbar {
   display: none;
 }
+
+.custom-toast {
+  height: 100vh;
+}

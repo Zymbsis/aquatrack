@@ -1,6 +1,6 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import { AXIOS_INSTANCE } from '../constants';
-import toast from 'react-hot-toast';
+import { toast } from 'react-toastify';
 
 export const getUser = createAsyncThunk('user/getUser', async (_, thunkAPI) => {
   try {

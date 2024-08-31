@@ -3,15 +3,25 @@ import { Button, Title } from 'shared';
 import { useModal } from 'context';
 import { deleteWaterIntake } from '../../../redux/water/operations';
 import css from './DeleteWaterModal.module.css';
+import { toast } from 'react-toastify';
 
 const DeleteWaterModal = ({ id }) => {
   const dispatch = useDispatch();
   const { closeModal } = useModal();
 
   const handleDelete = e => {
-    dispatch(deleteWaterIntake(id));
+    toast.promise(
+      dispatch(deleteWaterIntake(id)).unwrap(),
+      {
+        pending: 'Update',
+        success: 'Successfully deleted',
+        error: 'Something went wrong',
+      },
+      { autoClose: 2000 }
+    );
     closeModal(e);
   };
+
   const handleCancel = e => {
     closeModal(e);
   };
