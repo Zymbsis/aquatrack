@@ -7,5 +7,3 @@ export const selectIsLoading = state => state.auth.isLoading;
 export const selectIsError = state => state.auth.isError;
 
 export const selectShowOnboardingTour = state => state.auth.showOnboardingTour;
-
-export const selectIsSendMail = state => state.auth.isSendMail;

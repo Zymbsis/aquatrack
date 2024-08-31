@@ -31,11 +31,9 @@ const authSlice = createSlice({
       .addCase(register.rejected, (state, action) => {
         state.isLoading = false;
         state.isError = true;
-        state.isSendMail = false;
       })
       .addCase(register.fulfilled, (state, action) => {
         state.isError = false;
-        state.isSendMail = true;
       })
       .addCase(activateUser.fulfilled, (state, action) => {
         state.token = action.payload.accessToken;
@@ -80,7 +78,6 @@ const authSlice = createSlice({
       })
       .addMatcher(isAnyOf(register.pending, logIn.pending), state => {
         state.isLoading = true;
-        state.isSendMail = false;
       })
       .addMatcher(isAnyOf(register.rejected, logIn.rejected), state => {
         state.isLoading = false;

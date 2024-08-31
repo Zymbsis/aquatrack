@@ -9,7 +9,6 @@ export const INITIAL_STATE = {
     showOnboardingTour: false,
     isLoading: false,
     isError: false,
-    isSendMail: false,
   },
   user: { user: {}, countUser: null, isLoading: false, isError: false },
   water: {
