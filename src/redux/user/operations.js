@@ -1,6 +1,7 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import { AXIOS_INSTANCE } from '../constants';
 import { toast } from 'react-toastify';
+import { getInfoByMonth } from '../water/operations';
 
 export const getUser = createAsyncThunk('user/getUser', async (_, thunkAPI) => {
   try {
@@ -21,6 +22,9 @@ export const updateUser = createAsyncThunk(
       const {
         data: { data },
       } = await AXIOS_INSTANCE.patch('/users/update', payload);
+      if (payload.dailyNorma) {
+        thunkAPI.dispatch(getInfoByMonth());
+      }
       return data;
     } catch (error) {
       toast.error(<b>{error.data.message}</b>);

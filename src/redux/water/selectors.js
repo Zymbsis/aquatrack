@@ -11,7 +11,7 @@ export const selectIsLoading = state => state.water.isLoading;
 export const selectCompletionRate = createSelector(
   [selectInfoByToday, selectDailyNorma],
   (portions, norma) => {
-    if (!norma) {
+    if (!norma || !portions.length) {
       return 0;
     }
     const totalVolume = portions.reduce((acc, item) => acc + item.volume, 0);

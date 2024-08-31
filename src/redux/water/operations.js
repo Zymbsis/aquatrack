@@ -34,6 +34,7 @@ export const getInfoByMonth = createAsyncThunk(
             : currentDay.substring(0, 7)
         }`
       );
+
       return data;
     } catch (error) {
       return rejectWithValue(error);
