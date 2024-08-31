@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import { toast } from 'react-toastify';
 import { useTour } from '@reactour/tour';
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { selectShowOnboardingTour } from '../redux/auth/selectors';
 import { showOnboarding } from '../redux/auth/slice';
 import { OnboardingToast } from 'components';

@@ -10,7 +10,7 @@ const SuccessfullySendEmail = ({ email }) => {
       <Title className={css.title}>Email Verification</Title>
       <p className={css.text}>
         Please verify your email address by clicking the link sent to:{' '}
-        <span>{email}</span>
+        <a href={email}>{email}</a>
       </p>
       <Button className={css.closeBtn} onClick={closeModal}>
         Close window
