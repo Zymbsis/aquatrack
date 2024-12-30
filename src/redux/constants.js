@@ -22,7 +22,7 @@ export const INITIAL_STATE = {
 };
 
 export const AXIOS_INSTANCE = axios.create({
-  baseURL: 'https://aquatrackbackend-production.up.railway.app',
+  baseURL: 'https://aquatrack-backend-f2zw.onrender.com',
   withCredentials: true,
 });
 
